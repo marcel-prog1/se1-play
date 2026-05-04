@@ -19,5 +19,5 @@
 module se1.play {
     exports application;
     opens application;
-    // requires org.junit.jupiter.api;
+     requires org.junit.jupiter.api;
 }
