@@ -18,6 +18,12 @@
  */
 module se1.play {
     exports application;
+
     opens application;
-     requires org.junit.jupiter.api;
+
+    opens numbers;
+
+    requires org.junit.jupiter.api;
+
+    requires transitive runtimeSE;
 }
