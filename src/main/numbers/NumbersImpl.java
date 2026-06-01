@@ -146,7 +146,9 @@ public long sum(int[] numbers) {
     @Override
 
     public Set<Set<Integer>> findAllSums(int[] numbers, int sum) {
-
+        if (numbers == null) {
+            throw new IllegalArgumentException("illegal argument: null");
+        }
         Set<Set<Integer>> result = new HashSet<>();
 
         backtrack(numbers, sum, 0, new HashSet<>(), result);
