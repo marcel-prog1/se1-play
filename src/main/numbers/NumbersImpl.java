@@ -116,7 +116,9 @@ public long sum(int[] numbers) {
     @Override
 
     public Set<Pair> findSums(int[] numbers, int sum) {
-
+        if (numbers == null) {
+            throw new IllegalArgumentException("illegal argument: null");
+        }
         Set<Pair> result = new HashSet<>();
 
         for (int i = 0; i < numbers.length; i++) {
