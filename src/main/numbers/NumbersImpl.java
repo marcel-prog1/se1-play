@@ -11,24 +11,24 @@ import java.util.Set;
 public class NumbersImpl implements Numbers {
 
     @Override
-
-    public long sum(int[] numbers) {
-
-        long sum = 0;
-
-        for (int n : numbers) {
-
-            sum += n;
-
-        }
-
-        return sum;
-
+public long sum(int[] numbers) {
+    if (numbers == null) {
+        throw new IllegalArgumentException("illegal argument: null");
     }
+
+    long result = 0L;
+    for (int n : numbers) {
+        result += n;
+    }
+    return result;
+}
 
     @Override
 
     public long sumPositiveEvenNumbers(int[] numbers) {
+        if (numbers == null) {
+            throw new IllegalArgumentException("illegal argument: null");
+        }
 
         long sum = 0;
 
@@ -49,11 +49,11 @@ public class NumbersImpl implements Numbers {
     @Override
 
     public long sumRecursive(int[] numbers, int i) {
-
-        if (numbers == null || i >= numbers.length) {
-
+        if (numbers == null) {
+            throw new IllegalArgumentException("illegal argument: null");
+        }
+        if (i >= numbers.length) {
             return 0;
-
         }
 
         return numbers[i] + sumRecursive(numbers, i + 1);
