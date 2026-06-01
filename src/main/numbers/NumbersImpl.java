@@ -61,27 +61,24 @@ public long sum(int[] numbers) {
     }
 
     @Override
-
     public int findFirst(int[] numbers, int x) {
-
-        for (int i = 0; i < numbers.length; i++) {
-
-            if (numbers[i] == x) {
-
-                return i;
-
-            }
-
+        if (numbers == null) {
+            throw new IllegalArgumentException("illegal argument: null");
         }
-
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == x) {
+                return i;
+            }
+        }
         return -1;
-
     }
 
     @Override
 
     public int findLast(int[] numbers, int x) {
-
+        if (numbers == null) {
+            throw new IllegalArgumentException("illegal argument: null");
+        }
         for (int i = numbers.length - 1; i >= 0; i--) {
 
             if (numbers[i] == x) {
